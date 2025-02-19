@@ -1,0 +1,17 @@
+pkgname=entropy-xfce4-config
+pkgver=1
+pkgrel=1
+pkgdesc="Entropy XFCE4 config"
+arch=('x86_64')
+url="https://github.com/Entropy-Linux/XFCE4-Configs"
+license=('')
+groups=('')
+depends=('')
+makedepends=('')
+optdepends=('')
+source=("git+https://github.com/Entropy-Linux/XFCE4-Configs.git")
+sha256sums=('SKIP')
+package() {
+    cd "$srcdir/$pkgname"
+    install -Dm755 config/* "$pkgdir/usr/share/entropy/XFCE4-Config/"
+}
