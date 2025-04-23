@@ -8,7 +8,7 @@ url="https://github.com/Szmelc-INC/Cheats"
 license=('GPL3')
 depends=('bash' 'dialog' 'jq' 'curl')
 optdepends=('sudo: for privilege escalation during some cheat executions')
-source=("cheats.sh::https://raw.githubusercontent.com/Szmelc-INC/Cheats/main/cheats"
+source=("cheats.sh::https://raw.githubusercontent.com/Szmelc-INC/Cheats/main/cheats")
 md5sums=('SKIP' 'SKIP')
 
 package() {
