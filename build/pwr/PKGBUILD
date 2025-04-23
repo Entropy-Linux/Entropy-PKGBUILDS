@@ -1,0 +1,16 @@
+# Maintainer: Szmelc.INC <contact@szmelc.com>
+pkgname=pwr
+pkgver=2.0
+pkgrel=1
+pkgdesc="Universal Szmelc Power Manager (init-independent)"
+arch=('any')
+url="https://github.com/Szmelc-INC/PWR"
+license=('GPL3')
+depends=('bash' 'dialog')
+optdepends=('sudo: required for executing power actions')
+source=("pwr.sh::https://raw.githubusercontent.com/Szmelc-INC/PWR/main/pwr.sh")
+md5sums=('SKIP')
+
+package() {
+    install -Dm755 "$srcdir/pwr.sh" "$pkgdir/usr/bin/pwr"
+}
