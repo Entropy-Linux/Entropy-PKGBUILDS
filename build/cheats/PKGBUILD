@@ -1,0 +1,16 @@
+# Maintainer: Szmelc.INC <contact@szmelc.com>
+pkgname=cheats
+pkgver=3.0
+pkgrel=1
+pkgdesc="Cheats for Entropy Linux, a community driven, shell alias interpreter."
+arch=('any')
+url="https://github.com/Szmelc-INC/Cheats"
+license=('GPL3')
+depends=('bash' 'dialog' 'jq' 'curl')
+optdepends=('sudo: for privilege escalation during some cheat executions')
+source=("cheats.sh::https://raw.githubusercontent.com/Szmelc-INC/Cheats/main/cheats"
+md5sums=('SKIP' 'SKIP')
+
+package() {
+    install -Dm755 "$srcdir/cheats.sh" "$pkgdir/usr/bin/cheats"
+}
