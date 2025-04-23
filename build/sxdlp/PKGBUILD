@@ -1,0 +1,19 @@
+# Maintainer: Szmelc.INC <contact@szmelc.com>
+pkgname=sxdlp
+pkgver=4.2
+pkgrel=1
+pkgdesc="[$xDLP] FOSS-YT Client with search, playlists, and integrated player"
+arch=('any')
+url="https://github.com/Szmelc-INC/SxDLP/"
+license=('GPL3')
+depends=('python' 'python-pyqt5' 'python-google-api-python-client' 'python-requests' 'yt-dlp' 'mpv')
+makedepends=('python-setuptools')
+optdepends=('mpv: media playback support')
+source=("sxdlp.py::https://raw.githubusercontent.com/Szmelc-INC/SxDLP/refs/heads/main/main.py"
+        "sxdlp.desktop::https://raw.githubusercontent.com/Szmelc-INC/SxDLP/refs/heads/main/sxdlp.desktop")
+md5sums=('SKIP' 'SKIP')
+
+package() {
+    install -Dm755 "$srcdir/sxdlp.py" "$pkgdir/usr/bin/sxdlp"
+    install -Dm644 "$srcdir/sxdlp.desktop" "$pkgdir/usr/share/applications/sxdlp.desktop"
+}
